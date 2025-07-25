@@ -7,63 +7,63 @@ Stampare a schermo la bici con peso minore.
 
 const bikes = [
     {
-        "id": 1,
-        "nome": "Bici da corsa tradizionale",
-        "peso": 7.5
+        id: 1,
+        nome: "Bici da corsa tradizionale",
+        peso: 7.5,
     },
     {
-        "id": 2,
-        "nome": "Bici da corsa aerodinamica (aero)",
-        "peso": 7.8
+        id: 2,
+        nome: "Bici da corsa aerodinamica (aero)",
+        peso: 7.8,
     },
     {
-        "id": 3,
-        "nome": "Bici da corsa da scalata (climbing bike)",
-        "peso": 6.8
+        id: 3,
+        nome: "Bici da corsa da scalata (climbing bike)",
+        peso: 6.8,
     },
     {
-        "id": 4,
-        "nome": "Bici da corsa endurance",
-        "peso": 8.2
+        id: 4,
+        nome: "Bici da corsa endurance",
+        peso: 8.2,
     },
     {
-        "id": 5,
-        "nome": "Bici da cronometro / triathlon",
-        "peso": 8.2
+        id: 5,
+        nome: "Bici da cronometro / triathlon",
+        peso: 8.2,
     },
     {
-        "id": 6,
-        "nome": "Bici da corsa in acciaio",
-        "peso": 9.5
+        id: 6,
+        nome: "Bici da corsa in acciaio",
+        peso: 9.5,
     },
     {
-        "id": 7,
-        "nome": "Bici da corsa in titanio",
-        "peso": 8.0
+        id: 7,
+        nome: "Bici da corsa in titanio",
+        peso: 8.0,
     },
     {
-        "id": 8,
-        "nome": "Bici da pista (track bike)",
-        "peso": 7.5
+        id: 8,
+        nome: "Bici da pista (track bike)",
+        peso: 7.5,
     },
     {
-        "id": 9,
-        "nome": "Bici criterium (crit bike)",
-        "peso": 7.6
+        id: 9,
+        nome: "Bici criterium (crit bike)",
+        peso: 7.6,
     }
 ]
 console.log(bikes);
-function getMinWeight(bikearray) {
-    let minWeight = bikearray[0].peso;
-    for (let i = 0; i < bikearray.length; i++) {
-        let thisWeight = bikearray[i].peso;
-        if (thisWeight < minWeight) {
+function getMinWeight(bikeArray) {
+    let minWeight = bikeArray[0];
+    for (let i = 0; i < bikeArray.length; i++) {
+        let thisWeight = bikeArray[i];
+        if (thisWeight.peso < minWeight.peso) {
             minWeight = thisWeight;
         }
     } return minWeight;
 }
 const lightestWeight = getMinWeight(bikes);
-console.log(`il peso minimo è ${lightestWeight}kg`);
+console.log(lightestWeight);
 
 
 /*
@@ -79,62 +79,62 @@ let soccerTeams = [
     {
         id: 1,
         nome: "Inter",
-        falliSubiti: 0,
-        puntiFatti: 0
+        "falli subiti": 0,
+        "punti fatti": 0,
     },
     {
         id: 2,
         nome: "Milan",
-        falliSubiti: 0,
-        puntiFatti: 0
+        "falli subiti": 0,
+        "punti fatti": 0,
     },
     {
         id: 3,
         nome: "Napoli",
-        falliSubiti: 0,
-        puntiFatti: 0
+        "falli subiti": 0,
+        "punti fatti": 0,
     },
     {
         id: 4,
         nome: "Roma",
-        falliSubiti: 0,
-        puntiFatti: 0
+        "falli subiti": 0,
+        "punti fatti": 0,
     },
     {
         id: 5,
         nome: "Lazio",
-        falliSubiti: 0,
-        puntiFatti: 0
+        "falli subiti": 0,
+        "punti fatti": 0,
     },
     {
         id: 6,
         nome: "Atalanta",
-        falliSubiti: 0,
-        puntiFatti: 0
+        "falli subiti": 0,
+        "punti fatti": 0,
     },
     {
         id: 7,
         nome: "Fiorentina",
-        falliSubiti: 0,
-        puntiFatti: 0
+        "falli subiti": 0,
+        "punti fatti": 0,
     },
     {
         id: 8,
         nome: "Torino",
-        falliSubiti: 0,
-        puntiFatti: 0
+        "falli subiti": 0,
+        "punti fatti": 0,
     },
     {
         id: 9,
         nome: "Sassuolo",
-        falliSubiti: 0,
-        puntiFatti: 0
+        "falli subiti": 0,
+        "punti fatti": 0,
     },
     {
         id: 10,
         nome: "Empoli",
-        falliSubiti: 0,
-        puntiFatti: 0
+        "falli subiti": 0,
+        "punti fatti": 0,
     }
 ];
 
@@ -144,8 +144,8 @@ function getRandomNumber(min, max) {
 function getRandomStat(teams) {
     for (let i = 0; i < teams.length; i++) {
         let thisTeam = teams[i];
-        thisTeam.falliSubiti = getRandomNumber(1, 30);
-        thisTeam.puntiFatti = getRandomNumber(0, 100);
+        thisTeam["falli subiti"] = getRandomNumber(1, 30);
+        thisTeam["punti fatti"] = getRandomNumber(0, 100);
     }
     return teams;
 }
@@ -157,7 +157,7 @@ let newSoccerTeams = [];
 for (let i = 0; i < soccerTeams.length; i++) {
     newSoccerTeams.push({
         nome: soccerTeams[i].nome,
-        falliSubiti: soccerTeams[i].falliSubiti
+        "falli subiti": soccerTeams[i]["falli subiti"],
     });
 }
 console.log(newSoccerTeams);
