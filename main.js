@@ -5,7 +5,7 @@ Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e pe
 Stampare a schermo la bici con peso minore.
 */
 
-const bike = [
+const bikes = [
     {
         "id": 1,
         "nome": "Bici da corsa tradizionale",
@@ -52,15 +52,18 @@ const bike = [
         "peso": 7.6
     }
 ]
-console.log(bike);
-let weight = bike[0].peso;
-for (let i = 0; i < bike.length; i++) {
-    let thisBike = bike[i].peso;
-    if (thisBike < weight) {
-        weight = thisBike;
-    }
+console.log(bikes);
+function getMinWeight(bikearray) {
+    let minWeight = bikearray[0].peso;
+    for (let i = 0; i < bikearray.length; i++) {
+        let thisWeight = bikearray[i].peso;
+        if (thisWeight < minWeight) {
+            minWeight = thisWeight;
+        }
+    } return minWeight;
 }
-console.log(`il peso minimo è ${weight}kg`);
+const lightestWeight = getMinWeight(bikes);
+console.log(`il peso minimo è ${lightestWeight}kg`);
 
 
 
