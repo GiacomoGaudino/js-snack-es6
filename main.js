@@ -75,7 +75,7 @@ Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
-const soccerTeams = [
+let soccerTeams = [
     {
         id: 1,
         nome: "Inter",
@@ -137,4 +137,30 @@ const soccerTeams = [
         puntiFatti: 0
     }
 ];
-console.log(soccerTeams);
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function getRandomStat(teams) {
+    for (let i = 0; i < teams.length; i++) {
+        let thisTeam = teams[i];
+        thisTeam.falliSubiti = getRandomNumber(1, 30);
+        thisTeam.puntiFatti = getRandomNumber(0, 100);
+    }
+    return teams;
+}
+
+const randomStat = getRandomStat(soccerTeams);
+console.log(randomStat);
+
+let newSoccerTeams = [];
+for (let i = 0; i < soccerTeams.length; i++) {
+    newSoccerTeams.push({
+        nome: soccerTeams[i].nome,
+        falliSubiti: soccerTeams[i].falliSubiti
+    });
+}
+console.log(newSoccerTeams);
+
+
+
